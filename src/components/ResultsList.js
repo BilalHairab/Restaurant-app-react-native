@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler';
 import ResultDetail from '../components/ResultDetail'
 
@@ -9,6 +9,7 @@ const ResultsList = ({ title, results }) => {
             <Text style={styles.titleStyle}>{title}</Text>
             <FlatList
                 horizontal
+                showsHorizontalScrollIndicator={false}
                 data={results}
                 keyExtractor={(result) => result.id}
                 renderItem={({ item }) => {
