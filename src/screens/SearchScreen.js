@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import React, { useState } from 'react'
+import { Text, StyleSheet, ScrollView } from 'react-native'
 import SearchBar from '../components/SearchBar'
 import ResultsList from '../components/ResultsList'
 import useResults from '../hooks/useResults'
