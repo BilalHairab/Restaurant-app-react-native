@@ -1,17 +1,18 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler';
+import ResultDetail from '../components/ResultDetail'
 
 const ResultsList = ({ title, results }) => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text style={styles.titleStyle}>{title}</Text>
             <FlatList
                 horizontal
                 data={results}
                 keyExtractor={(result) => result.id}
                 renderItem={({ item }) => {
-                    return <Text>{item.name}</Text>
+                    return <ResultDetail result={item} />
                 }}
             />
         </View>
@@ -21,7 +22,12 @@ const ResultsList = ({ title, results }) => {
 const styles = StyleSheet.create({
     titleStyle: {
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginLeft: 15,
+        marginBottom: 5
+    },
+    container: {
+        marginBottom: 10
     }
 })
 
